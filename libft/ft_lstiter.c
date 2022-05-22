@@ -6,11 +6,12 @@
 /*   By: bpirzad <bpirzad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 16:56:02 by bpirzad           #+#    #+#             */
-/*   Updated: 2021/11/11 16:56:05 by bpirzad          ###   ########.fr       */
+/*   Updated: 2022/05/22 18:48:58 by bpirzad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
+
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	if (lst && f)

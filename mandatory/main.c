@@ -1,4 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bpirzad <bpirzad@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/22 18:34:00 by bpirzad           #+#    #+#             */
+/*   Updated: 2022/05/22 18:36:51 by bpirzad          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "pipex.h"
+
 void	ft_check(char **argv)
 {
 	while (*argv[2] && *argv[2] == ' ')
@@ -13,11 +26,11 @@ void	ft_check(char **argv)
 
 void	ft_error(char *str)
 {
-	write(1,str, ft_strlen(str));
+	write(1, str, ft_strlen(str));
 	exit(1);
 }
 
-int main(int argc, char **argv, char **envp)
+int	main(int argc, char **argv, char **envp)
 {
 	t_proc	proc;
 	t_cmd	cmd;

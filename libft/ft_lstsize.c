@@ -6,11 +6,12 @@
 /*   By: bpirzad <bpirzad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 16:56:28 by bpirzad           #+#    #+#             */
-/*   Updated: 2021/11/11 16:56:29 by bpirzad          ###   ########.fr       */
+/*   Updated: 2022/05/22 18:49:10 by bpirzad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
+
 int	ft_lstsize(t_list *lst)
 {
 	int	i;

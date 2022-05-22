@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bpirzad <bpirzad@student.21-school.ru>     +#+  +:+       +#+        */
+/*   By: bpirzad <bpirzad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 16:30:08 by bpirzad           #+#    #+#             */
-/*   Updated: 2021/11/06 13:12:37 by bpirzad          ###   ########.fr       */
+/*   Updated: 2022/05/22 18:49:18 by bpirzad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+
 typedef struct s_list
 {
 	void			*content;

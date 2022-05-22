@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: bpirzad <bpirzad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/15 13:22:31 by bpirzad           #+#    #+#             */
-/*   Updated: 2022/05/22 17:24:22 by bpirzad          ###   ########.fr       */
+/*   Created: 2022/05/22 18:34:13 by bpirzad           #+#    #+#             */
+/*   Updated: 2022/05/22 18:42:51 by bpirzad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ typedef struct s_proccess
 	pid_t	child2;
 }				t_proc;
 
+void	delete_struct(char	**strs);
 void	ft_error(char	*message);
 void	cmd_error(char	*message, t_cmd	**cmds);
 char	*doublejoin(char *mypath, char *cmd);

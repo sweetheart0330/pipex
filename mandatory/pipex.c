@@ -1,5 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   pipex.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bpirzad <bpirzad@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/22 18:34:05 by bpirzad           #+#    #+#             */
+/*   Updated: 2022/05/22 18:43:03 by bpirzad          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "pipex.h"
-static void	delete_struct(char	**strs)
+
+void	delete_struct(char	**strs)
 {
 	int	i;
 
@@ -18,18 +31,6 @@ void	del(t_cmd	*cmds)
 	free(cmds->cmd2_path);
 }
 
-void	cmd_error(char	*message, t_cmd	**cmd)
-{
-	delete_struct((*cmd)->cmd1);
-	delete_struct((*cmd)->cmd2);
-	delete_struct((*cmd)->mypaths);
-	if ((*cmd)->cmd1_path)
-		free((*cmd)->cmd1_path);
-	if ((*cmd)->cmd2_path)
-		free((*cmd)->cmd2_path);
-	ft_error(message);
-}
-
 void	child_1(t_cmd	*cmd, char	**envp, char	*filename, t_proc	*proc)
 {
 	int	infile;
@@ -39,7 +40,7 @@ void	child_1(t_cmd	*cmd, char	**envp, char	*filename, t_proc	*proc)
 		cmd_error("ERROR: Unable to open 'infile'", &cmd);
 	if (dup2(infile, STDIN_FILENO) < 0)
 		cmd_error("ERROR: Unable to dup infile and STDIN", &cmd);
-	if (dup2(proc->fds[1], STDOUT_FILENO) < 0) 
+	if (dup2(proc->fds[1], STDOUT_FILENO) < 0)
 		cmd_error("ERROR: Unable to dup fds[1] and STDOUT", &cmd);
 	close(proc->fds[0]);
 	execve(cmd->cmd1_path, cmd->cmd1, envp);
@@ -65,7 +66,7 @@ void	child_2(t_cmd	*cmd, char	**envp, char	*filename
 	exit(EXIT_FAILURE);
 }
 
-void	pipex(t_cmd	*cmd, t_proc	*proc, char	**envp, char	**argv)
+void	pipex(t_cmd *cmd, t_proc *proc, char **envp, char **argv)
 {
 	proc->child1 = fork();
 	if (proc->child1 < 0)
